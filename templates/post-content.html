@@ -1,20 +1,35 @@
 {% for post in posts%}
 {% if post['id']==blog_id%}
-<div class="container">
-    <div class="row">
+<header class="masthead" style="background-image: url('img/post-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="post-preview">
-                <a href="post.html">
-                    <h2 class="post-title">
-                        {{post['title']}}
-                    </h2>
-                    <h3 class="post-subtitle">
-                        {{post['body']}}
-                    </h3>
-                </a>
-            </div>
+          <div class="post-heading">
+            <h1> {{post['title']}}</h1>
+            <h2 class="subheading">{{post['title']}}</h2>
+          </div>
         </div>
+      </div>
+    </div>
+  </header>
+
+<div class="container">
+    <div class="post-preview">
+        <article>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <h3 class="blockquote">
+                            {{post['body']}}
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </article>
+
     </div>
 </div>
 {% endif %}
 {% endfor %}
+
