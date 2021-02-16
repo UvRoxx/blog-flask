@@ -1,0 +1,19 @@
+{% for post in posts%}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-preview">
+                <a href="{{ url_for('post', blog_id=post['id'],_anchor='my_anchor') }}">
+                    <h2 class="post-title">
+                        {{post['title']}}
+                    </h2>
+                    <h3 class="post-subtitle">
+                        {{post['title']}}
+                    </h3>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+

@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/styles.css">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Clean Blog - Start Bootstrap Theme</title>
+
+{%include 'head.html'%}
+
 </head>
+
 <body>
-<div class="wrapper">
-    <div class="top">
-        <div class="title"><h1>My Blog</h1></div>
-    </div>
-    <div class="content">
-        <div class="card">
-            {% for post in posts%}
-            {% if post['id']== 1%}
-            <h2>{{post['title']}}</h2>
-            <p class="text">{{post['subtitle'] }}</p>
-            <a href="{{url_for('show_post',blog_id=1)}}">Read</a>
-            {% endif %}
-            {% endfor %}
+
+  <!-- Navigation -->
+{% include 'navigation.html'%}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('static/images/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>UV Blog</h1>
+            <span class="subheading">A Blog Made With Flask</span>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="content">
-        <div class="card">
-            {% for post in posts%}
-            {%if post['id']==showcase_id%}
-            <h2>{{post['title']}}</h2>
-            <p class="text">{{post['subtitle'] }}</p>
-            <a href="{{url_for('show_post',blog_id=showcase_id)}}">Read</a>
-            {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-</div>
+  </header>
+
+
+{%include "header.html"%}
+  <hr>
+{%include "footer.html"%}
+
+  <!-- Footer -->
+
+  <!-- Bootstrap core JavaScript -->
+
 </body>
-<footer>
-    <p>Made with ♥️ in Montreal</p>
-</footer>
+
 </html>
